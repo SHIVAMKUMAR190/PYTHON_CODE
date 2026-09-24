@@ -19,13 +19,10 @@ for pid, qty in customer_cart:
         line_total = unit_price * qty
         subtotal += line_total
         items_ordered.add(name)
-        
-        cart_breakdown.append({
-            "id": pid,
-            "product": name,
-            "qty": qty,
-            "total": line_total
-        })
+
+        cart_breakdown.append(
+            {"id": pid, "product": name, "qty": qty, "total": line_total}
+        )
 
 discount_rate = 0.10 if applied_code in discount_codes else 0.0
 discount_amt = subtotal * discount_rate
@@ -41,7 +38,7 @@ order_summary = {
     "discount_amount": round(discount_amt, 2),
     "shipping": shipping_fee,
     "grand_total": round(final_total, 2),
-    "tier": status_tier
+    "tier": status_tier,
 }
 
 print("ORDER BREAKDOWN:")

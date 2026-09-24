@@ -1,7 +1,6 @@
 word = input("enter your word : ")
 
 
-
 dictonary = {
     "water": "paani",
     "book": "kitab",
@@ -95,10 +94,8 @@ dictonary = {
     "go": "jaana",
     "come": "aana",
     "god": "bhagwan",
-    "king": "raja"
+    "king": "raja",
 }
-
-
 
 
 print(dictonary.get(word))
