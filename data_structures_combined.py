@@ -1,6 +1,6 @@
 users = [
     {"name": "Shivam", "tech_stack": {"Python", "C"}},
-    {"name": "Aman", "tech_stack": {"HTML", "CSS", "Python"}}
+    {"name": "Aman", "tech_stack": {"HTML", "CSS", "Python"}},
 ]
 
 for user in users:

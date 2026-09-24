@@ -14,23 +14,31 @@ promoted_candidates = set()
 for emp_id, name, dept, scores, skills in raw_records:
     avg_score = sum(scores) / len(scores) if len(scores) > 0 else 0
     skill_set = set(skills)
-    
-    meets_skill_req = mandatory_skills.issubset(skill_set) if dept == "Engineering" else len(skill_set) >= 2
+
+    meets_skill_req = (
+        mandatory_skills.issubset(skill_set)
+        if dept == "Engineering"
+        else len(skill_set) >= 2
+    )
     bonus_eligible = True if avg_score >= 80 and meets_skill_req else False
-    rating = "Exceeds" if avg_score >= 88 else ("Meets" if avg_score >= 70 else "Needs Improvement")
-    
+    rating = (
+        "Exceeds"
+        if avg_score >= 88
+        else ("Meets" if avg_score >= 70 else "Needs Improvement")
+    )
+
     if bonus_eligible:
         promoted_candidates.add(name)
-        
+
     final_appraisals[emp_id] = {
         "name": name,
         "dept": dept,
         "average": round(avg_score, 1),
         "rating": rating,
         "bonus": 1500 if bonus_eligible else 500,
-        "skill_count": len(skill_set)
+        "skill_count": len(skill_set),
     }
-    
+
     dept_entry = department_logs.get(dept, [])
     dept_entry.append(avg_score)
     department_logs[dept] = dept_entry
@@ -40,10 +48,11 @@ dept_averages = {
     for dept, scores_list in department_logs.items()
 }
 
-top_employee = max(
-    final_appraisals.items(),
-    key=lambda item: item[1]["average"]
-)[1]["name"] if final_appraisals else "None"
+top_employee = (
+    max(final_appraisals.items(), key=lambda item: item[1]["average"])[1]["name"]
+    if final_appraisals
+    else "None"
+)
 
 print("EMPLOYEE APPRAISALS:")
 for eid, record in final_appraisals.items():

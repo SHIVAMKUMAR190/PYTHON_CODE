@@ -1,10 +1,6 @@
 csv_file = "students.csv"
 
-records = [
-    ("Shivam", 101, 85),
-    ("Aman", 102, 90),
-    ("Rohan", 103, 78)
-]
+records = [("Shivam", 101, 85), ("Aman", 102, 90), ("Rohan", 103, 78)]
 
 with open(csv_file, "w") as f:
     f.write("Name,Roll,Marks\n")
