@@ -1,7 +1,7 @@
 fruits = ["Apple", "Banana", "Mango"]
 
 fruits.append("Orange")
-print("Add karne ke baad:", fruits)
+print("After add", fruits)
 
 fruits.remove("Banana")
-print("Remove karne ke baad:", fruits)
+print("after remove:", fruits)

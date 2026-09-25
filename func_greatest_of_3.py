@@ -1,4 +1,4 @@
-def func_greatest_of_3_no(a,b,c):
+def func_greatest_of_3_no(s,t,y):
     if (a>b and a>c):
         print("A is a greatest number")
     elif (b>a and b>c):
