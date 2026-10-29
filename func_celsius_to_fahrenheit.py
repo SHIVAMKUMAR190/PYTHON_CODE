@@ -5,5 +5,5 @@ def func_celsius_to_fahrenheit(c):
     
 
 
-a = int(input("enter celcius "))
+a = int(input("enter celsius "))
 func_celsius_to_fahrenheit(a)
