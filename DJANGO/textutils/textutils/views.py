@@ -13,5 +13,6 @@ def index(request):
         
     #     </h1>
     #     """)
+    
     return render(request,'INDEX.HTML')
 
