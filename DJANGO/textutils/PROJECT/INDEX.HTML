@@ -3,22 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Webpage</title>
+    <title>Web Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2563eb;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Welcome to My Website</h1>
-    <p>This is a paragraph of text explaining what this page is about.</p>
+    <main class="card">
+        <h1 id="title">Welcome</h1>
+        <p id="description">Click the button below to see JavaScript in action.</p>
+        <button id="actionBtn">Click Me</button>
+    </main>
 
-    <h2>Subheading Example</h2>
-    <p>Here is an example of an external link: <a href="https://example.com" target="_blank">Click here</a>.</p>
+    <script>
+        const btn = document.getElementById('actionBtn');
+        const desc = document.getElementById('description');
 
-    <h3>List Example:</h3>
-    <ul>
-        <li>HTML (Structure)</li>
-        <li>CSS (Styling)</li>
-        <li>JavaScript (Functionality)</li>
-    </ul>
-
+        btn.addEventListener('click', () => {
+            desc.textContent = "Button clicked! JavaScript is working properly.";
+            btn.style.backgroundColor = "#16a34a";
+            btn.textContent = "Done";
+        });
+    </script>
 </body>
 </html>
